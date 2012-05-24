@@ -1,0 +1,198 @@
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 90%;
+	background-color="FFFFFF";
+}
+html, body {
+	min-height: 100%;
+}
+a {
+	color: #4682b4;
+}
+
+h1 {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	text-align:  center;
+	color: #444;
+	text-shadow: #fff 0 1px 0;
+	margin: 2em 0;
+}
+.centered {
+	margin: 2em auto;
+	width: 480px;
+}
+.centered.countdown {
+	width: 620px;
+}
+.centered.peoplecountdown {
+	width: 500px;
+}
+.explanation {
+	clear: both;
+	margin: 3em 1em;
+	padding-top: 0.5em;
+	font-size: 120%;
+	text-shadow: #fff 0 1px 0;
+	color: #888;
+	text-align: center;
+}
+
+/* Clock container */
+.time {
+	font-size: 3.5em;
+	font-weight: bold;
+	list-style: none;
+	margin: 0;
+	height: 70px;
+}
+
+.time li {
+	float: left;
+	width: 55px;
+	height: 60px;
+	position: relative;
+	
+	/* This setting affects how much the cards stand out from the page.
+	 * Lower numbers make the effect wider/larger, higher make it more shallow. */
+	-webkit-perspective: 70;
+}
+
+.time li.separator {
+	color: #444;
+	text-shadow: #fff 0 -1px 3px;
+	font-weight: lighter;
+	width: 22px;
+	text-align: left;
+}
+.time li.meridiem {
+	font-size: 16pt;
+	font-weight: normal;
+	color: #888;
+	text-shadow: #fff 0 1px 0;
+	padding-left: 10px;
+	padding-top: 48px;
+}
+
+/* Normal looking time card */
+.time div.card {
+	background: #444;
+	padding: 5px 0;
+	color: #fff;
+	width: 1em;
+	text-align: center;
+	border-radius: 10px;
+	position: relative;
+
+    /* Background gradient */
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, #090909),
+        color-stop(1, #323232)
+    );
+    background: -moz-linear-gradient(
+        center bottom,
+        #090909 0%,
+        #323232 100%
+    );
+
+}
+
+.time div.card > .break {
+    /* Create two colour line */
+    background: #181818;
+    border-bottom: 1px solid #343434;
+    height: 1px;
+
+    /* Centre within the pane */
+    width: 100%;
+    position: absolute;
+    top: 50%;
+}
+
+/* Elements added when the object is changing */
+.time .change {
+	position: absolute;
+	top: 0;
+	height: 60px;
+	z-index: 2;
+	
+	-webkit-transition: all .4s ease-in;
+	-webkit-transform: rotateX(0deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+}
+
+/* The top and bottom segments to the card animation */
+.time .top .card {
+	height: 24px;
+	overflow: hidden;
+	box-shadow: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom: 1px solid #181818;
+
+	background: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, #181818),
+	    color-stop(1, #323232)
+	);
+}
+.time .change.bottom {
+	top: 0;
+	padding-top: 36px;
+	height: 35px;
+	
+	-webkit-transition: all .4s ease-out;
+	-webkit-transition-delay: .2s;
+	-webkit-transform: rotateX(270deg);
+}
+
+/* These .flip rules do the actual animation */
+.time .change.flip {
+	-webkit-transform: rotateX(-90deg);
+	top: 5px;
+}
+.time .change.bottom.flip {
+	-webkit-transform: rotateX(0deg);
+	top: 0;
+}
+
+.time .change .bottom {
+	overflow: hidden; 
+	height: 35px;
+}
+.time .bottom .card {
+	margin-top: -36px;
+}
+
+.time .new-top {
+	position: absolute;
+	top: 0;
+	z-index:  1;
+}
+
+
+/* Countdown page CSS rules */
+.bold {
+	color: #444;
+}
+.labels {
+	list-style: none;
+	margin: 0;
+	clear: both;
+	
+	color: #888;
+	text-shadow: #fff 0 1px 0;
+}
+.labels li {
+	float: left;
+	width: 113px;
+	text-align: center;
+	margin-right: 18px;
+	margin-top: 10px;
+}
